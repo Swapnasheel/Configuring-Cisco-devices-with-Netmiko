@@ -1,3 +1,4 @@
 # Configuring-Cisco-devices-with-Netmiko
 
-Codes will be uploaded soon..
+Netmiko is a python library that uses SSH to connect to the devices and configure them.
+This is also known as Python automation.
