@@ -1,0 +1,7 @@
+conf t
+vlan 2
+name access
+int fa 1/2
+switchport mode access
+switchport access vlan 2
+

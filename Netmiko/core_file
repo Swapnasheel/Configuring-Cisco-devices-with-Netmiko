@@ -1,0 +1,12 @@
+conf t
+vlan 2
+name data
+int fa 1/1
+switchport mode access 
+switchport access vlan 2
+int fa 2/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk allowed vlan 1,2
+end
+
