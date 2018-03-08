@@ -8,12 +8,16 @@ username = raw_input("Get username: ")
 password = raw_input("Get password: ")
 
 for line in f:
+    # Connect to the client using the paramiko SSHClient function
     ssh_client = paramiko.SSHClient()
+    # For testing purposes, AutoAddPolicy is added to allow auto-add unknown host keys
+    # This should be avoided in the production environment, and set to RejectPolicy
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh_client.connect(hostname=line, username=username, password=password)
 
     print "Successful connection with " + line
-
+    
+    # Start an interactive session with the router
     remote_connection = ssh_client.invoke_shell()
 
     command = open("commands")
